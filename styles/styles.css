@@ -1,0 +1,25 @@
+body {
+  font-family: 'IM Fell English SC', serif;
+  margin: 0;
+  padding: 0;
+  background: #777;
+}
+h1 {
+  width: 484px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+img {
+  display: block;
+}
+a {
+  display: block;
+  text-align: center;
+  font-size: 36px;
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
