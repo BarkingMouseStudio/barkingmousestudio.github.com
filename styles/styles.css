@@ -10,13 +10,26 @@ body {
   font-family: 'IM Fell English SC', serif;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 h1 {
   margin: 0;
   padding: 0;
   text-indent: -9999em;
 }
-a {
+p.betatest {
+  font-size: 18px;
+  position: fixed;
+  bottom: 15%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+a.button {
+  display: block;
+  color: #000;
+}
+a.contact {
   display: block;
   font-size: 24px;
   color: #efefef;
