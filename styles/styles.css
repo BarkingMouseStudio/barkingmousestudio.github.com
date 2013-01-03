@@ -17,17 +17,29 @@ h1 {
   text-indent: -9999em;
 }
 
-p.beta {
-  font-size: 18px;
-  position: fixed;
-  bottom: 15%;
-  left: 0;
-  right: 0;
-  z-index: 2;
+a {
+  color: black;
 }
 
-a.link {
-  color: #000;
+a:hover {
+  color: white;
+}
+
+p {
+  margin: 10px 0 0;
+}
+
+.about {
+  font-size: 22px;
+  position: fixed;
+  bottom: 17%;
+  left: 10px;
+  right: 28px;
+  color: black;
+  z-index: 2;
+  max-width: 400px;
+  min-width: 500px;
+  margin: 0 auto;
 }
 
 a.contact {
@@ -42,8 +54,48 @@ a.contact {
   z-index: 2;
 }
 
-a:hover {
-  color: #fff;
+input.signup {
+  border: none;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 80%;
+  padding: 4px 8px;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+  line-height: 26px;
+  height: 26px;
+  display: block;
+  float: left;
+  box-sizing: border-box;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+a.submit {
+  font-family: Helvetica, Arial, sans-serif;
+  float: left;
+  display: block;
+  background: #454c60;
+  color: #efefef;
+  font-size: 12px;
+  width: 20%;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  margin: 0 0 0 0;
+  text-decoration: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.thanks, .input {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.thanks {
+  display: none;
 }
 
 .mixpanel {

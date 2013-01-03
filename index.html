@@ -10,14 +10,39 @@
   </head>
   <body>
     <h1>Barking Mouse Studio</h1>
-    <p class='beta'>
-      Interested in a chance to
-      <br>
-      <a class='link' href='http://tflig.ht/TYrhxD'>beta test</a>
-      <br>
-      our new iOS game?
-    </p>
+    <div class='about'>
+      <div class='thanks'>Thanks for signing up!</div>
+      <div class='input'>
+        <input type='email' class='signup' placeholder='john.smith@gmail.com'>
+        <a href='#' class='submit'>Go!</a>
+      </div>
+      <p>Sign up for our iOS game updates <br> and for a chance to join our beta:</p>
+    </div>
     <a class='contact' href='mailto:team@barkingmousestudio.com'>team@barkingmousestudio.com</a>
     <a href='http://mixpanel.com/f/partner' class='mixpanel'><img src='http://mixpanel.com/site_media/images/partner/badge_blue.png' alt='Real Time Web Analytics' /></a>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js'></script>
+    <script>
+      (function() {
+        $('a.submit').on('click', _.throttle(function() {
+          var $signup = $('input.signup');
+          $signup.attr('disabled', true);
+
+          var email = $signup.val();
+          $signup.val('');
+
+          $('.input').hide();
+          $('.thanks').show();
+
+          mixpanel.identify(email);
+          mixpanel.people.set({
+            '$email': email,
+            '$created': new Date().toJSON(),
+            '$last_login': new Date(),
+          });
+        }, 3 * 1000));
+      })();
+    </script>
   </body>
 </html>
