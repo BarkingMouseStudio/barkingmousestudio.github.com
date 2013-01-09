@@ -25,12 +25,19 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js'></script>
     <script>
       (function() {
+        mixpanel.track('pageview');
+
         $('a.submit').on('click', _.throttle(function() {
           var $signup = $('input.signup');
-          $signup.attr('disabled', true);
-
           var email = $signup.val();
+
+          if (email.indexOf('@') === -1) {
+            $signup.addClass('error');
+            return;
+          }
+
           $signup.val('');
+          $signup.attr('disabled', true);
 
           $('.input').hide();
           $('.thanks').show();
@@ -41,6 +48,8 @@
             '$created': new Date().toJSON(),
             '$last_login': new Date(),
           });
+          mixpanel.name_tag(email);
+          mixpanel.track('signup');
         }, 3 * 1000));
       })();
     </script>

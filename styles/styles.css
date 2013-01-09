@@ -71,6 +71,10 @@ input.signup {
   border-bottom-left-radius: 3px;
 }
 
+input.error {
+  border: 2px solid red;
+}
+
 a.submit {
   font-family: Helvetica, Arial, sans-serif;
   float: left;
