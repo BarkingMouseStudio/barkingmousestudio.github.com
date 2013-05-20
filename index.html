@@ -1,57 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>Barking Mouse Studio</title>
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
-    <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC' rel='stylesheet' type='text/css'>
-    <link href='styles/styles.css' rel='stylesheet' />
 
-    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("172668be62adcdb2b75b86749e239fe1");</script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet" />
+
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+"//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("172668be62adcdb2b75b86749e239fe1");</script>
   </head>
   <body>
-    <h1>Barking Mouse Studio</h1>
-    <div class='about'>
-      <div class='thanks'>Thanks for signing up!</div>
-      <div class='input'>
-        <input type='email' class='signup' placeholder='john.smith@gmail.com'>
-        <a href='#' class='submit'>Go!</a>
-      </div>
-      <p>Sign up for our iOS game updates <br> and for a chance to join our beta:</p>
+
+    <div class="header section">
+      <h1>Lost Toys</h1>
     </div>
-    <a class='contact' href='mailto:team@barkingmousestudio.com'>team@barkingmousestudio.com</a>
-    <a href='http://mixpanel.com/f/partner' class='mixpanel'><img src='http://mixpanel.com/site_media/images/partner/badge_blue.png' alt='Real Time Web Analytics' /></a>
+    <div class="signup-section section">
+      <div class="signup">
+        <input type="text" class="email" placeholder="Sign up for information about our games">
+        <button class="submit">Submit</button>
+      </div>
+    </div>
+    <div class="about section">
+      <h2>It's a puzzle game.</h2>
+    </div>
+    <div class="social section">
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Email</a></li>
+        <li><a href="#">Need help?</a></li>
+      </ul>
+    </div>
 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js'></script>
-    <script>
-      (function() {
-        mixpanel.track('pageview');
+    <div class="footer">
+      <a href="https://mixpanel.com/f/partner" class="mixpanel"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>
+      <div class="copyright">Copyright &copy; 2013 Barking Mouse Studio, Inc.</div>
+    </div>
 
-        $('a.submit').on('click', _.throttle(function() {
-          var $signup = $('input.signup');
-          var email = $signup.val();
-
-          if (email.indexOf('@') === -1) {
-            $signup.addClass('error');
-            return;
-          }
-
-          $signup.val('');
-          $signup.attr('disabled', true);
-
-          $('.input').hide();
-          $('.thanks').show();
-
-          mixpanel.identify(email);
-          mixpanel.people.set({
-            '$email': email,
-            '$created': new Date().toJSON(),
-            '$last_login': new Date(),
-          });
-          mixpanel.name_tag(email);
-          mixpanel.track('signup');
-        }, 3 * 1000));
-      })();
-    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
