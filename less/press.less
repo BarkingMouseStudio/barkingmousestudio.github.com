@@ -11,7 +11,7 @@
     font-family: 'IM Fell English', serif;
     margin: 0 0 20px;
     font-size: 45px;
-    font-weight: 100;
+    font-weight: 400;
     letter-spacing: 2px;
   }
 
@@ -20,19 +20,38 @@
     font-size: 24px;
     color: darken(white, 50%);
     color: fade(white, 50%);
-    font-weight: 100;
+    font-weight: 300;
   }
 }
 
-.summary {
-  blockquote {
-    font-style: italic;
-    color: lighten(@color, 25%);
-    margin: 0 0 0 40px;
-    padding: 0 0 0 20px;
-    border-left: 2px solid lighten(@color, 25%);
+.section {
+  color: @color;
+  background: darken(white, 1%); // lighten(@color, 62%);
+  overflow: hidden;
+
+  h3 {
+    color: darken(@color, 10%);
+    font-size: 24px;
+    margin: 40px 0 20px;
+  }
+
+  p {
+    margin: 15px 0;
+  }
+
+  .content {
+    overflow: hidden;
+    padding: 40px 80px 80px;
+    width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid lighten(@color, 55%);
+  }
+
+  &.last .content {
+    border: none;
   }
 }
+
 
 .links {
   display: none;

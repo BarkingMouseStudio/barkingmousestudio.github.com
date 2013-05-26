@@ -7,37 +7,24 @@ body {
   padding: 0;
   text-rendering: optimizeLegibility;
 }
+a {
+  color: inherit;
+}
 menu,
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-a {
-  color: inherit;
+address {
+  font-style: normal;
 }
-.section {
-  color: #3d617b;
-  background: #f8fafc;
-  overflow: hidden;
-}
-.section h3 {
-  color: #2c4659;
-  font-size: 24px;
-  margin: 40px 0 20px;
-}
-.section p {
-  margin: 15px 0;
-}
-.section .content {
-  overflow: hidden;
-  padding: 40px 80px 80px;
-  width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #e0e9f0;
-}
-.section.last .content {
-  border: none;
+blockquote {
+  font-style: italic;
+  color: #7aa1bd;
+  margin: 0 0 0 40px;
+  padding: 0 0 0 20px;
+  border-left: 2px solid #7aa1bd;
 }
 .footer {
   color: #6995b5;
@@ -45,9 +32,6 @@ a {
   background: white;
   font-size: 14px;
   text-align: center;
-}
-address {
-  font-style: normal;
 }
 @media (max-width: 960px) {
   .section h3 {
