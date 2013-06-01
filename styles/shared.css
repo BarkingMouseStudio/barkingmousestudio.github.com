@@ -1,0 +1,58 @@
+body {
+  background-color: #999;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+menu, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+blockquote {
+  font-style: italic;
+
+  margin: 0 0 0 48px;
+  padding: 0 0 0 24px;
+  border-left: 2px solid #ccc;
+}
+
+.footer {
+  overflow: hidden;
+  padding: 40px 10%;
+  background: #8d88ab;
+  color: white;
+  text-align: center;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+  color: #999;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #999;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #999;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #999;
+}
+
+@media (max-width: 960px) {
+  .footer {
+    font-size: 14px;
+    padding: 20px 10%;
+  }
+}
