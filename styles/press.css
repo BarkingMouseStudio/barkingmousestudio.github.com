@@ -4,25 +4,35 @@
   background: #dedede url('/images/header_background.jpg') no-repeat center center;
   background-size: cover;
   text-align: left;
-  padding: 96px 0;
+  padding: 0;
   color: white;
 }
 
-h1 {
-  font-family: 'IM Fell English', serif;
-  width: 600px;
+.title {
   margin: 0 auto;
-  padding-bottom: 24px;
-  font-size: 45px;
-  font-weight: 400;
-  letter-spacing: 2px;
+  padding: 0;
+  width: 800px;
+  position: relative;
 }
 
-h2 {
+.title h1 {
+  background: url('//barkingmousestudio.desk.com/customer/portal/theme_attachments/8862?cb=1366390818064') no-repeat top left transparent;
+  height: 325px;
   width: 600px;
-  margin: 0 auto;
-  font-size: 24px;
+  display: block;
+  margin: 0;
+  margin-left: -97px;
+  padding: 0;
+  text-indent: -9999em;
+}
+
+.title h2{
+  font-family: 'IM Fell English', serif;
+  font-size: 52px;
   font-weight: 300;
+  position: absolute;
+  bottom: -25px;
+  left: 100px;
 }
 
 .section {
@@ -54,18 +64,18 @@ h2 {
   border-bottom: none;
 }
 
-.links {
+.quicklinks {
   display: none;
   overflow: hidden;
 }
 
-.links li {
+.quicklinks li {
   float: left;
   text-align: center;
   width: 25%;
 }
 
-.links li a {
+.quicklinks li a {
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -73,11 +83,11 @@ h2 {
   /* background: saturate(lighten(@color, 30%), 10%); */
 }
 
-.links li a:hover {
+.quicklinks li a:hover {
   /* background: saturate(lighten(@color, 40%), 20%); */
 }
 
-.links li a:active {
+.quicklinks li a:active {
   /* background: saturate(lighten(@color, 20%), 10%); */
 }
 
