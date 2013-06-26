@@ -2,15 +2,32 @@
   mixpanel.track('pageview');
 
   var $modal = $('.modal');
-  $('.play').on('click', function() {
-    mixpanel.track('play');
-    $modal.show().animate({ opacity: 1 }, 200, 'ease-in-out');
-  });
-
-  $modal.on('click', function() {
+  function closeModal() {
     $modal.animate({ opacity: 0 }, 200, 'ease-in-out', function() {
       $modal.hide();
     });
+  }
+
+  var video = $('.video').get(0);
+  var player = $f(video);
+  player.addEvent('ready', function() {
+    console.warn('ready');
+    player.addEvent('finish', function() {
+      closeModal();
+      mixpanel.track('play finish');
+    });
+  });
+
+  $('.play').on('click', function() {
+    mixpanel.track('play');
+    $modal.show().animate({ opacity: 1 }, 200, 'ease-in-out', function() {
+      player.api('play');
+    });
+  });
+
+  $modal.on('click', function() {
+    closeModal();
+    player.api('pause');
   });
 
   $('.links a').on('click', function(e) {
