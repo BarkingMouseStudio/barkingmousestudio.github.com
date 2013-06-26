@@ -13,6 +13,12 @@
     });
   });
 
+  $('.links a').on('click', function() {
+    mixpanel.track('aux', {
+      href: this.getAttribute('href')
+    });
+  });
+
   $('button.submit').on('click', _.throttle(function() {
     var $email = $('.email');
     var email = $email.val();
