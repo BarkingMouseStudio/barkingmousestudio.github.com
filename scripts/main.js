@@ -13,9 +13,9 @@
     });
   });
 
-  $('.links a').on('click', function() {
-    mixpanel.track('aux', {
-      href: this.getAttribute('href')
+  $('.links a').on('click', function(e) {
+    mixpanel.track('link', {
+      href: e.target.getAttribute('href')
     });
   });
 
