@@ -11,7 +11,6 @@
   var video = $('.video').get(0);
   var player = $f(video);
   player.addEvent('ready', function() {
-    console.warn('ready');
     player.addEvent('finish', function() {
       closeModal();
       mixpanel.track('play finish');
