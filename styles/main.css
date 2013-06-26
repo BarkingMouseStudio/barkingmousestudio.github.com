@@ -17,7 +17,6 @@ body {
   background: url('/images/header.jpg') no-repeat center center;
   overflow: hidden;
   position: relative;
-  text-align: center;
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -199,74 +198,75 @@ body {
 }
 
 @media (max-width: 960px) {
-.signup {
-  padding: 40px 0;
-}
-.signup h3 {
-  font-size: 60px;
-  line-height: 60px;
-  margin: 0 0 40px;
-}
+  .signup {
+    padding: 40px 0;
+  }
+  .signup h3 {
+    font-size: 60px;
+    line-height: 60px;
+    margin: 0 0 40px;
+  }
 
-.signup p {
-  font-size: 16px;
-  margin: 0 auto;
-  max-width: 800px;
-  line-height: 24px;
-}
+  .signup p {
+    font-size: 16px;
+    margin: 0 auto;
+    max-width: 800px;
+    line-height: 24px;
+  }
 
-.signup .content {
-  width: 380px;
-  margin: 0 auto;
-}
+  .signup .content {
+    width: 380px;
+    margin: 0 auto;
+  }
 
-.signup .email {
-  width: 260px;
-  padding: 6px 12px;
-  font-size: 16px;
-  line-height: 24px;
-}
-.signup .submit {
-  font-size: 16px;
-  width: 120px;
-  padding: 6px 12px;
-  line-height: 24px;
-}
+  .signup .email {
+    width: 260px;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .signup .submit {
+    font-size: 16px;
+    width: 120px;
+    padding: 6px 12px;
+    line-height: 24px;
+  }
 
-.header {
-  text-align: center;
-  height: auto;
-  min-height: 640px;
-}
-.header h1 {
-  font-size: 80px;
-  line-height: 80px;
-}
-.header h2 {
-  font-size:  32px;
-  line-height: 32px;
-}
-.header h3 {
-  font-size: 32px;
-  line-height: 32px;
-}
-.header .play {
-  margin: 48px 0;
-  width: 192px;
-  height: 192px;
+  .header {
+    text-align: center;
+    height: auto;
+    min-height: 640px;
+  }
+  .header h1 {
+    font-size: 80px;
+    line-height: 80px;
+  }
+  .header h2 {
+    font-size:  32px;
+    line-height: 32px;
+  }
+  .header h3 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .header .play {
+    margin: 48px 0;
+    width: 192px;
+    height: 192px;
 
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-}
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+  }
 
-.links {
-  padding: 0 5%;
-}
-.links a {
-  color: white;
-  font-size: 24px;
-  line-height: 120px;
-  min-width: 100px;
+  .links {
+    padding: 0 5%;
+  }
+  .links a {
+    color: white;
+    font-size: 24px;
+    line-height: 120px;
+    min-width: 100px;
+  }
 }
