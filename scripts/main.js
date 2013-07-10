@@ -44,19 +44,29 @@
       return;
     }
 
-    $email.val('');
-    $email.attr('disabled', true);
+    var $error = $('div.error');
 
-    $('.form').hide();
-    $('.thanks').show();
+    var $submit = $('.submit');
+    $submit.attr('disabled', true);
 
-    mixpanel.identify(email);
-    mixpanel.people.set({
-      '$email': email,
-      '$created': new Date().toJSON(),
-      '$last_login': new Date(),
+    var url = 'http://barkingmousestudio.us7.list-manage.com/subscribe/post-json?u=1509e89e6c5a63a559fec6857&id=183e8cb777&EMAIL=' + encodeURIComponent(email) + '&c=?';
+    $.getJSON(url, function(response) {
+      if (response && response.result === 'error') {
+        $error.html(response.msg).show();
+        $email.addClass('error');
+        $submit.attr('disabled', false);
+        return;
+      }
+
+      $email.removeClass('error');
+      $error.hide();
+      $('.form').hide();
+      $('.thanks').show();
+
+      $email.val('');
+      $email.attr('disabled', true);
     });
-    mixpanel.name_tag(email);
+
     mixpanel.track('signup');
   }, 3 * 1000));
 })();
