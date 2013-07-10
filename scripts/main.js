@@ -54,7 +54,7 @@
       if (response && response.result === 'error') {
         $error.html(response.msg).show();
         $email.addClass('error');
-        $submit.attr('disabled', false);
+        $submit.removeAttr('disabled');
         return;
       }
 
