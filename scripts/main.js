@@ -1,5 +1,7 @@
 (function() {
-  mixpanel.track('pageview');
+  mixpanel.track('pageview', {
+    href: window.location.href
+  });
 
   var $modal = $('.modal');
   function closeModal() {
