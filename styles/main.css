@@ -91,6 +91,14 @@ body {
 
 .press blockquote {
   border-left-color: white;
+
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+.press blockquote.blur {
+  opacity: 0.6;
 }
 
 .press p {

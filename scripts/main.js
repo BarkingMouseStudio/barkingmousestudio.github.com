@@ -3,6 +3,14 @@
     href: window.location.href
   });
 
+  var $quotes = $('.press blockquote');
+  $quotes.on('mouseenter', function() {
+    $quotes.addClass('blur');
+    $(this).removeClass('blur');
+  }).on('mouseleave', function() {
+    $quotes.removeClass('blur');
+  });
+
   var $modal = $('.modal');
   function closeModal() {
     $modal.animate({ opacity: 0 }, 200, 'ease-in-out', function() {
