@@ -10,6 +10,7 @@ body {
   color: white;
 }
 
+/* HEADER */
 .header {
   font-family: 'IM Fell English', serif;
   height: 90%;
@@ -26,10 +27,11 @@ body {
 
 .header .hgroup {
   position: absolute;
-  top: 10%;
-  bottom: 10%;
-  left: 10%;
-  right: 10%;
+  top: 50%;
+  left: 4%;
+  width: 50%;
+  margin-top: -190px;
+  text-align: center;
 }
 
 .header h1 {
@@ -43,34 +45,66 @@ body {
   font-size: 48px;
   line-height: 48px;
   font-weight: normal;
-  margin: 0;
+  margin: 0 0 24px;
 }
 
-.header h3 {
-  font-size: 48px;
-  line-height: 48px;
-  font-weight: normal;
-  margin: 0;
+.header .download {
+  display: block;
+  width: 135px;
+  height: 40px;
+  background: url('/images/appstore_download.png') no-repeat center center;
 }
 
-.header .play {
+.header .watch {
   cursor: pointer;
   border: none;
-  margin: 60px 0;
-  background: transparent url('/images/play.png') no-repeat center center;
+  background: transparent url('/images/play_small.png') no-repeat right center;
   display: inline-block;
-  width: 248px;
-  height: 248px;
+  width: 150px;
+  height: 150px;
   opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  margin: -75px 0 0 -75px;
 
   -webkit-transition: opacity 0.2s ease-out;
   -moz-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
 
-.header .play:hover {
+.header .watch:hover {
   opacity: 0.8;
 }
+
+.header .awards img {
+  margin: 20px;
+}
+
+/* PRESS */
+
+.press {
+  padding: 20px 80px;
+  background: #111;
+}
+
+.press blockquote {
+  border-left-color: white;
+}
+
+.press p {
+  text-align: center;
+}
+
+.press blockquote,
+.press p {
+  max-width: 600px;
+  margin: 40px auto;
+  line-height: 28px;
+  font-size: 18px;
+}
+
+/* SIGNUP */
 
 .signup {
   font-family: 'IM Fell English', serif;
@@ -78,11 +112,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 80px 0;
   color: white;
-  background: #999 url('/images/signup.jpg') no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #4f536d;
   text-align: center;
 }
 
@@ -93,6 +123,10 @@ body {
   margin: 0 0 40px;
   color: rgba(0, 0, 0, 0.4);
   text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.signup h4 {
+  font-size: 18px;
 }
 
 .signup p {
@@ -163,6 +197,8 @@ body {
   background: #8d88ab;
 }
 
+/* SCREENSHOTS */
+
 .screenshots {
   color: white;
   height: 100%;
@@ -174,6 +210,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+/* MODAL */
 
 .modal {
   position: fixed;
@@ -202,7 +240,7 @@ body {
   margin: 0;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .signup {
     padding: 40px 0;
   }
@@ -211,19 +249,16 @@ body {
     line-height: 60px;
     margin: 0 0 40px;
   }
-
   .signup p {
     font-size: 16px;
     margin: 0 auto;
     max-width: 800px;
     line-height: 24px;
   }
-
   .signup .content {
     width: 380px;
     margin: 0 auto;
   }
-
   .signup .email {
     width: 260px;
     padding: 6px 12px;
@@ -238,9 +273,11 @@ body {
   }
 
   .header {
-    text-align: center;
     height: auto;
     min-height: 640px;
+  }
+  .header .hgroup {
+    margin-top: -200px;
   }
   .header h1 {
     font-size: 80px;
@@ -250,14 +287,15 @@ body {
     font-size:  32px;
     line-height: 32px;
   }
-  .header h3 {
-    font-size: 32px;
-    line-height: 32px;
+  .header .awards img {
+    display: block;
+    width: 200px;
+    height: 105px;
+    margin: 20px auto;
   }
-  .header .play {
-    margin: 48px 0;
-    width: 192px;
-    height: 192px;
+  .header .watch {
+    width: 100px;
+    height: 100px;
 
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -273,5 +311,18 @@ body {
     font-size: 24px;
     line-height: 120px;
     min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .screenshots {
+    height: 50%;
+  }
+  .header .hgroup {
+    width: auto;
+    right: 4%;
+  }
+  .header .watch {
+    display: none;
   }
 }
