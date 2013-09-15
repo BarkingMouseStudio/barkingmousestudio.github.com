@@ -292,18 +292,18 @@ body {
     margin-top: -200px;
   }
   .header h1 {
-    font-size: 64px;
-    line-height: 64px;
+    font-size: 80px;
+    line-height: 80px;
   }
   .header h2 {
-    font-size:  26px;
-    line-height: 26px;
+    font-size:  32px;
+    line-height: 32px;
   }
   .header .awards img {
     display: block;
     width: 200px;
     height: 105px;
-    margin: 30px auto;
+    margin: 20px auto;
   }
   .header .watch {
     width: 100px;
@@ -327,6 +327,18 @@ body {
 }
 
 @media (max-width: 768px) {
+  .header .hgroup {
+    margin-top: -200px;
+  }
+  .header h1 {
+    font-size: 58px;
+    line-height: 58px;
+  }
+  .header h2 {
+    font-size:  24px;
+    line-height: 24px;
+  }
+
   .screenshots {
     height: 50%;
   }
