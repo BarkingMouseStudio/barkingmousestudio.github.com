@@ -334,6 +334,8 @@ body {
   .press blockquote,
   .press p {
     font-size: 14px;
+    margin: 20px auto;
+    line-height: 22px;
   }
 
   .signup .content {
@@ -359,5 +361,13 @@ body {
     font-size: 18px;
     line-height: 100px;
     min-width: 80px;
+  }
+
+  .footer .legal {
+    text-align: center;
+  }
+
+  .footer .mixpanel {
+    float: none;
   }
 }

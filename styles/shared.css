@@ -69,6 +69,7 @@ blockquote {
   font-size: 14px;
   line-height: 36px;
   text-align: left;
+  float: left;
 }
 
 .footer .mixpanel {
