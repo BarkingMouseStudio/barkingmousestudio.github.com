@@ -333,9 +333,8 @@ body {
 
   .press blockquote,
   .press p {
-    font-size: 14px;
-    margin: 20px auto;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 26px;
   }
 
   .signup .content {
