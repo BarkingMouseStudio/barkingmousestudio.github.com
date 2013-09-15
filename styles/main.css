@@ -330,6 +330,12 @@ body {
   .screenshots {
     height: 50%;
   }
+
+  .press blockquote,
+  .press p {
+    font-size: 14px;
+  }
+
   .signup .content {
     width: 268px;
   }
@@ -348,5 +354,10 @@ body {
   }
   .links {
     padding: 0;
+  }
+  .links a {
+    font-size: 18px;
+    line-height: 100px;
+    min-width: 80px;
   }
 }
