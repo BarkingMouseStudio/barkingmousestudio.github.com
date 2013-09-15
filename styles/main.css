@@ -333,6 +333,7 @@ body {
   .header h1 {
     font-size: 58px;
     line-height: 58px;
+    margin: 0 0 32px;
   }
   .header h2 {
     font-size:  24px;
