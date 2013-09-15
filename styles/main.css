@@ -292,18 +292,18 @@ body {
     margin-top: -200px;
   }
   .header h1 {
-    font-size: 80px;
-    line-height: 80px;
+    font-size: 72px;
+    line-height: 72px;
   }
   .header h2 {
-    font-size:  32px;
-    line-height: 32px;
+    font-size:  28px;
+    line-height: 28px;
   }
   .header .awards img {
     display: block;
     width: 200px;
     height: 105px;
-    margin: 20px auto;
+    margin: 30px auto;
   }
   .header .watch {
     width: 100px;
