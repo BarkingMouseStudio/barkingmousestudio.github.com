@@ -331,9 +331,14 @@ body {
     height: 50%;
   }
 
+  .press {
+    padding: 20px 40px;
+  }
+
   .press blockquote,
   .press p {
     font-size: 18px;
+    margin: 20px auto;
     line-height: 26px;
   }
 
@@ -357,13 +362,14 @@ body {
     padding: 0;
   }
   .links a {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 100px;
     min-width: 80px;
   }
 
   .footer .legal {
     text-align: center;
+    float: none;
   }
 
   .footer .mixpanel {
