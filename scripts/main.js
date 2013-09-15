@@ -27,7 +27,7 @@
     });
   });
 
-  $('.play').on('click', function() {
+  $('.watch').on('click', function() {
     mixpanel.track('play');
     $modal.show().animate({ opacity: 1 }, 200, 'ease-in-out', function() {
       player.api('play');
