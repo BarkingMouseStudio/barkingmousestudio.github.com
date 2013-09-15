@@ -274,12 +274,14 @@ body {
     padding: 6px 12px;
     font-size: 16px;
     line-height: 24px;
+    height: 36px;
   }
   .signup .submit {
     font-size: 16px;
     width: 120px;
     padding: 6px 12px;
     line-height: 24px;
+    height: 48px;
   }
 
   .header {
@@ -328,11 +330,23 @@ body {
   .screenshots {
     height: 50%;
   }
+  .signup .content {
+    width: 268px;
+  }
+  .signup .email {
+    width: 160px;
+  }
+  .signup .submit {
+    width: 80px;
+  }
   .header .hgroup {
     width: auto;
     right: 4%;
   }
   .header .watch {
     display: none;
+  }
+  .links {
+    padding: 0;
   }
 }
