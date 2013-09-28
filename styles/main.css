@@ -30,7 +30,7 @@ body {
   top: 50%;
   left: 4%;
   width: 50%;
-  margin-top: -190px;
+  margin-top: -245px;
   text-align: center;
 }
 
@@ -78,6 +78,8 @@ body {
 }
 
 .header .awards img {
+  width: 225px;
+  height: 118px;
   margin: 20px;
 }
 
@@ -300,10 +302,9 @@ body {
     line-height: 32px;
   }
   .header .awards img {
-    display: block;
-    width: 200px;
-    height: 105px;
-    margin: 30px auto;
+    width: 175px;
+    height: auto;
+    margin: 10px;
   }
   .header .watch {
     width: 100px;
@@ -367,6 +368,10 @@ body {
   .header .hgroup {
     width: auto;
     right: 4%;
+  }
+  .header .awards img {
+    width: 150px;
+    height: auto;
   }
   .header .watch {
     display: none;
