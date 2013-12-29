@@ -23,7 +23,7 @@
     <meta name="apple-itunes-app" content="app-id=675719361">
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600|IM+Fell+English" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600|IM+Fell+Great+Primer" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet" />
 
     <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+"//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("172668be62adcdb2b75b86749e239fe1");</script>
@@ -31,11 +31,26 @@
   <body>
 
     <div class="header">
+      <video autoplay loop>
+        <source src="videos/loop.webm" type='video/webm; codecs="vp8, vorbis"' />
+        <source src="videos/loop.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="videos/loop.ogv" type='video/ogg; codecs="theora, vorbis"' />
+      </video>
+
       <div class="hgroup">
-        <h1>Lost Toys</h1>
-        <h2>A meditative puzzle game</h2>
-        <!-- http://linkmaker.itunes.apple.com/us/ -->
-        <!-- a href="http://appstore.com/<appname>/" class="download"></a -->
+        <div class="columns">
+          <div class="column left">
+            <h1>Lost Toys</h1>
+            <h2>A meditative puzzle game</h2>
+          </div>
+
+          <div class="column right">
+            <!-- http://linkmaker.itunes.apple.com/us/ -->
+            <!-- a href="http://appstore.com/<appname>/" class="download"></a -->
+            <button class="watch" title="Watch Lost Toys trailer"></button>
+          </div>
+        </div>
+
         <div class="awards">
           <img src="/images/SenseOfWonder.png" alt="Best Game Design - Sense of Wonder - Tokyo Game Show - 2013">
           <img src="/images/Codame.png" alt="Most Artistic - Developer Showcase - Codame - 2013">
@@ -43,7 +58,6 @@
           <img src="/images/Minibooth.png" alt="Official Selection - MiniBooth - Indie MegaBooth - 2013">
         </div>
       </div>
-      <button class="watch" title="Watch Lost Toys trailer"></button>
     </div>
 
     <div class="press">
@@ -72,29 +86,15 @@
       </p>
     </div>
 
-    <div class="signup">
-      <div class="form">
-        <h3>Join Us</h3>
-        <h4>For updates about our games and the occasional beta invite.</h4>
-        <div class="content">
-          <input type="email" class="email" placeholder="Your email address...">
-          <button class="submit">Signup</button>
-      	</div>
-        <div class="error"></div>
-      </div>
-      <div class="thanks">
-        <h3>Thanks for Signing Up!</h3>
-        <p>We're working hard to release our game soon and we will let you know when its ready.</p>
-      </div>
+    <div class="watch_wrapper">
+      <button class="watch" title="Watch Lost Toys trailer"></button>
     </div>
 
-    <div class="screenshots"></div>
-
     <div class="links">
-      <a href="https://www.facebook.com/BarkingMouseStudio">facebook</a>
-      <a href="http://cheese.barkingmousestudio.com/">blog</a>
-      <a href="http://barkingmousestudio.com/press.html">press</a>
-      <a href="http://support.barkingmousestudio.com/">support</a>
+      <a href="https://www.facebook.com/BarkingMouseStudio">Facebook</a>
+      <a href="https://twitter.com/BarkingMice">Twitter</a>
+      <a href="http://cheese.barkingmousestudio.com/">Blog</a>
+      <a href="http://support.barkingmousestudio.com/">Support</a>
     </div>
 
     <div class="footer">

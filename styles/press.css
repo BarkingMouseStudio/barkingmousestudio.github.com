@@ -1,7 +1,7 @@
 @import 'shared.css';
 
 .header {
-  background: #dedede url('/images/header_background.jpg') no-repeat center center;
+  background: #767c9a url('/images/header_background.jpg') no-repeat center center;
   background-size: cover;
   text-align: left;
   padding: 0;
@@ -11,15 +11,11 @@
   margin: 0;
   padding: 0;
 }
-.header h1 a{
+.header h1 a {
   display: block;
-  background: url('//barkingmousestudio.com/images/logo_small.png') no-repeat 0px 0px transparent;
   height: 325px;
   width: 600px;
-  margin: 0 auto;
-  padding: 0 197px;
-  display: block;
-  text-indent: -9999em;
+  padding-left: 200px;
 }
 
 .subheader{

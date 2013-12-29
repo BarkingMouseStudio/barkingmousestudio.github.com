@@ -1,7 +1,19 @@
 (function() {
+  var time = Date.now();
+
   mixpanel.track('pageview', {
     href: window.location.href
   });
+
+  $(window).on('unload', function() {
+    mixpanel.track('engagement', {
+      duration: (Date.now() - time) / 1000
+    });
+  });
+
+  $(document).on('click', function() {
+    mixpanel.track('click');
+  })
 
   var $quotes = $('.press blockquote');
   $quotes.on('mouseenter', function() {
@@ -13,7 +25,9 @@
 
   var $modal = $('.modal');
   function closeModal() {
-    $modal.animate({ opacity: 0 }, 200, 'ease-in-out', function() {
+    $modal.animate({
+      opacity: 0
+    }, 200, 'ease-out', function() {
       $modal.hide();
     });
   }
@@ -29,7 +43,9 @@
 
   $('.watch').on('click', function() {
     mixpanel.track('play');
-    $modal.show().animate({ opacity: 1 }, 200, 'ease-in-out', function() {
+    $modal.show().animate({
+      opacity: 1
+    }, 200, 'ease-out', function() {
       player.api('play');
     });
   });
@@ -45,38 +61,12 @@
     });
   });
 
-  $('button.submit').on('click', _.throttle(function() {
-    var $email = $('.email');
-    var email = $email.val();
-
-    if (email.indexOf('@') === -1) {
-      $email.addClass('error');
-      return;
+  $(function() {
+    var isMobile = navigator.userAgent.match(/(iPad|iPhone|iPod|Android)/i);
+    var isSmall = window.innerWidth <= 1024 && window.innerHeight <= 1024;
+    if (isMobile || isSmall) {
+      $('.header').addClass('video-fallback');
+      $('.header video').hide();
     }
-
-    var $error = $('div.error');
-
-    var $submit = $('.submit');
-    $submit.attr('disabled', true);
-
-    var url = 'http://barkingmousestudio.us7.list-manage.com/subscribe/post-json?u=1509e89e6c5a63a559fec6857&id=183e8cb777&EMAIL=' + encodeURIComponent(email) + '&c=?';
-    $.getJSON(url, function(response) {
-      if (response && response.result === 'error') {
-        $error.html(response.msg).show();
-        $email.addClass('error');
-        $submit.removeAttr('disabled');
-        return;
-      }
-
-      $email.removeClass('error');
-      $error.hide();
-      $('.form').hide();
-      $('.thanks').show();
-
-      $email.val('');
-      $email.attr('disabled', true);
-    });
-
-    mixpanel.track('signup');
-  }, 3 * 1000));
+  });
 })();

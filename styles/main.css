@@ -12,50 +12,89 @@ body {
 
 /* HEADER */
 .header {
-  font-family: 'IM Fell English', serif;
+  font-family: 'IM Fell Great Primer', serif;
   height: 90%;
-  min-height: 760px;
-  background: url('/images/header.jpg') no-repeat center center;
+  min-height: 500px;
   overflow: hidden;
   position: relative;
+}
 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+.header.video-fallback,
+.header video {
+  background: url('/images/video-fallback.jpg') no-repeat center center;
   background-size: cover;
+}
+
+.header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .header .hgroup {
   position: absolute;
   top: 50%;
-  left: 4%;
-  width: 50%;
-  margin-top: -245px;
+  width: 100%;
+  margin-top: -225px;
+  opacity: 0.9;
   text-align: center;
 }
 
+.header .columns {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+}
+
+.header .column {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.header .left {
+  width: 60%;
+}
+
+.header .right {
+  width: 40%;
+}
+
 .header h1 {
-  font-size: 120px;
-  line-height: 120px;
+  font-size: 115px;
+  line-height: 1;
   font-weight: normal;
   margin: 0 0 12px;
 }
 
 .header h2 {
-  font-size: 48px;
-  line-height: 48px;
+  font-size: 50px;
+  line-height: 1;
   font-weight: normal;
-  margin: 0 0 24px;
+  margin: 0 0 10px;
+  text-transform: lowercase;;
 }
 
 .header .download {
-  display: block;
-  width: 135px;
-  height: 40px;
-  background: url('/images/appstore_download.png') no-repeat center center;
+  display: inline-block;
+  width: 300px;
+  height: 89px;
+  background: url('/images/download.png') no-repeat;
+  background-size: 300px 89px;
 }
 
-.header .watch {
+.watch_wrapper {
+  position: relative;
+  background: url('/images/final-screenshot.jpg') no-repeat center center;
+  background-size: cover;
+  height: 90%;
+}
+
+.watch {
   cursor: pointer;
   border: none;
   background: transparent url('/images/play_small.png') no-repeat right center;
@@ -63,32 +102,44 @@ body {
   width: 150px;
   height: 150px;
   opacity: 0.4;
-  position: absolute;
-  top: 50%;
-  right: 25%;
-  margin: -75px 0 0 -75px;
+  padding: 0;
 
   -webkit-transition: opacity 0.2s ease-out;
   -moz-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
 
-.header .watch:hover {
+.watch:hover {
   opacity: 0.8;
 }
 
-.header .awards img {
-  width: 225px;
-  height: 118px;
-  margin: 20px;
+.watch_wrapper .watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -75px 0 0 -75px;
+}
+
+/* AWARDS */
+
+.awards {
+  text-align: center;
+  margin: 96px 0 0;
+}
+
+.awards img {
+  width: 250px;
+  height: 131px;
+  margin: 15px;
 }
 
 /* PRESS */
 
 .press {
   padding: 20px 80px;
-  background: #111;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  background: #767c9a; /* #111 */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .press blockquote {
@@ -111,116 +162,8 @@ body {
 .press p {
   max-width: 600px;
   margin: 40px auto;
-  line-height: 28px;
+  line-height: 3/2;
   font-size: 18px;
-}
-
-/* SIGNUP */
-
-.signup {
-  font-family: 'IM Fell English', serif;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 80px 0;
-  color: white;
-  background: #4f536d;
-  text-align: center;
-}
-
-.signup h3 {
-  font-size: 80px;
-  line-height: 80px;
-  font-weight: normal;
-  margin: 0 0 40px;
-  color: rgba(0, 0, 0, 0.4);
-  text-shadow: 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.signup h4 {
-  font-size: 18px;
-}
-
-.signup p {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  margin: 0 auto;
-  max-width: 800px;
-  line-height: 36px;
-}
-
-.signup .content {
-  width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.signup .thanks {
-  display: none;
-}
-
-.signup .email {
-  color: #444;
-  border: none;
-  width: 420px;
-  margin: 0;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  padding: 8px 16px;
-  font-size: 16px;
-  line-height: 36px;
-  height: 38px;
-  display: block;
-  float: left;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.signup input.error {
-  border: 4px solid rgb(192, 0, 0);
-  padding: 4px 12px;
-}
-.signup div.error {
-  display: none;
-  text-align: center;
-  margin: 20px 0 0;
-}
-.signup .submit {
-  cursor: pointer;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  width: 140px;
-  display: block;
-  float: left;
-  background: #454c60;
-  color: #efefef;
-  margin: 0;
-  padding: 8px 32px;
-  line-height: 36px;
-  height: 54px;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-
-  -webkit-transition: background 0.1s ease-out;
-  -moz-transition: background 0.1s ease-out;
-  transition: background 0.1s ease-out;
-}
-.signup .submit:hover {
-  background: #8d88ab;
-}
-
-/* SCREENSHOTS */
-
-.screenshots {
-  color: white;
-  height: 100%;
-  background-image: url('/images/screenshots.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 /* MODAL */
@@ -252,146 +195,88 @@ body {
   margin: 0;
 }
 
-@media (max-width: 1200px) {
-  .signup {
-    padding: 40px 0;
-  }
-  .signup h3 {
-    font-size: 60px;
-    line-height: 60px;
-    margin: 0 0 40px;
-  }
-  .signup p {
-    font-size: 16px;
-    margin: 0 auto;
-    max-width: 800px;
-    line-height: 24px;
-  }
-  .signup .content {
-    width: 404px;
-    margin: 0 auto;
-  }
-  .signup .email {
-    width: 260px;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 24px;
-    height: 36px;
-  }
-  .signup .submit {
-    font-size: 16px;
-    width: 120px;
-    padding: 6px 12px;
-    line-height: 24px;
-    height: 48px;
-  }
-
-  .header {
-    height: auto;
-    min-height: 640px;
-  }
-  .header .hgroup {
-    margin-top: -200px;
-  }
+@media screen and (max-width: 1200px) {
   .header h1 {
-    font-size: 80px;
-    line-height: 80px;
+    font-size: 90px;
   }
+
   .header h2 {
-    font-size:  32px;
-    line-height: 32px;
-  }
-  .header .awards img {
-    width: 175px;
-    height: auto;
-    margin: 10px;
-  }
-  .header .watch {
-    width: 100px;
-    height: 100px;
-
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+    font-size: 40px;
   }
 
-  .links {
-    padding: 0 5%;
+  .header .hgroup {
+    margin-top: -174px;
   }
-  .links a {
-    color: white;
-    font-size: 24px;
-    line-height: 120px;
-    min-width: 100px;
+
+  .header .download {
+    width: 250px;
+    height: 74px;
+    background-size: 250px 74px;
+  }
+
+  .awards img {
+    width: 200px;
+    height: 105px;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .header .hgroup {
-    position: static;
-    margin: 100px 0;
-  }
-  .header h1 {
-    font-size: 58px;
-    line-height: 58px;
-  }
-  .header h2 {
-    font-size:  24px;
-    line-height: 24px;
-    margin: 0 0 96px;
+    margin-top: -227px;
   }
 
-  .screenshots {
-    height: 50%;
+  .header .columns {
+    width: auto;
+    margin: 0;
+    display: block;
+  }
+
+  .header .column {
+    display: block;
+  }
+
+  .header .left,
+  .header .right {
+    width: auto;
+  }
+
+  .header .right {
+    margin: 40px 0 0;
+  }
+
+  .awards {
+    margin: 40px 0 0;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .header {
+    height: auto;
+  }
+
+  .header .hgroup {
+    position: static;
+    margin: 40px 0;
+  }
+
+  .header h1 {
+    font-size: 64px;
+  }
+
+  .header h2 {
+    font-size: 32px;
+  }
+
+  .awards img {
+    display: block;
+    margin: 20px auto;
   }
 
   .press {
-    padding: 20px 40px;
+    padding: 20px;
   }
 
-  .press blockquote,
-  .press p {
-    font-size: 18px;
-    margin: 20px auto;
-    line-height: 26px;
-  }
-
-  .signup .content {
-    width: 268px;
-  }
-  .signup .email {
-    width: 160px;
-  }
-  .signup .submit {
-    width: 80px;
-  }
-  .header .hgroup {
-    width: auto;
-    right: 4%;
-  }
-  .header .awards img {
-    margin: 30px auto;
-    display: block;
-  }
-  .header .watch {
-    display: none;
-  }
-  .links {
-    padding: 0;
-  }
-  .links a {
-    font-size: 20px;
-    line-height: 100px;
-    min-width: 80px;
-  }
-
-  .footer .legal {
-    text-align: center;
-    float: none;
-  }
-
-  .footer .mixpanel {
-    float: none;
+  .watch_wrapper {
+    height: 80%;
   }
 }
