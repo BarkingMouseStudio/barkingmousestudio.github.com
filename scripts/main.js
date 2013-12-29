@@ -60,13 +60,4 @@
       href: e.target.getAttribute('href')
     });
   });
-
-  $(function() {
-    var isMobile = navigator.userAgent.match(/(iPad|iPhone|iPod|Android)/i);
-    var isSmall = window.innerWidth <= 1024 && window.innerHeight <= 1024;
-    if (isMobile || isSmall) {
-      $('.header').addClass('video-fallback');
-      $('.header video').hide();
-    }
-  });
 })();
