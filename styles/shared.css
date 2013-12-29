@@ -38,7 +38,7 @@ blockquote {
 .links a {
   color: white;
   font-size: 48px;
-  line-height: 2.5;
+  line-height: 192px;
   text-decoration: none;
   display: block;
   width: 25%;
@@ -60,7 +60,7 @@ blockquote {
 
 .footer {
   overflow: hidden;
-  padding: 40px 10%;
+  padding: 30px 10%;
   background: #767c9a; /* #8d88ab */
   color: white;
   text-align: center;
@@ -116,6 +116,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 
   .links a {
     font-size: 36px;
+    line-height: 96px;
     width: 100%;
     float: none;
     min-width: 0;
