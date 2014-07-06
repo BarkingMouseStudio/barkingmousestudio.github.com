@@ -2,31 +2,17 @@
   var posts,post,left,right, $head;
 
   $head = $('#header');
-  posts = document.querySelectorAll('#posts .post');
-  left = document.querySelector('#posts-left');
-  right = document.querySelector('#posts-right');
-
-  /*
-  for (var i = 0; i < posts.length; i++) {
-    post = posts[i];
-
-    if (right.clientHeight < left.clientHeight) {
-      post = right.appendChild(post);
-    } else {
-      post = left.appendChild(post);
-    }
-  };
-  */
+  posts = document.querySelectorAll('#timeline .timeline-post');
+  left = document.querySelector('#timeline-left');
+  right = document.querySelector('#timeline-right');
 
   $("img").unveil(400, function() {
     $(this).load(function() {
-      // this.style.opacity = 1;
 
       var element = this;
       while(element.parentNode) {
         element = element.parentNode;
-        if (element.className == "post") {
-          console.log(element.id);
+        if (element.className == "timeline-post") {
           break;
         }
       }
