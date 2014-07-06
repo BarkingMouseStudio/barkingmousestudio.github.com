@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+
+    <title>Unity Lightmaps | Barking Mouse Studio</title>
+    <meta name="description" content="&lt;p&gt;Creating a shader in Unity that receives lightmap data is harder than you would think… Here are three tips.&lt;/p&gt;">
+
+    <link href="/assets/favicon.ico" rel="icon" type="image/x-icon">
+    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+      window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+      window.analytics.load("250gkc2lok");
+      window.analytics.page('Page', 'Unity Lightmaps');
+    </script>
+  </head>
+  <body id="page" class="inner ">
+    <header>
+      <h1><a href="/" rel="bookmark">Barking Mouse Studio</a></h1>
+      <nav>
+      
+        <a href="/pages/press">Press »</a>
+      
+        <a href="/pages/writing">Writing »</a>
+      
+        <a href="/pages/consulting">Consulting »</a>
+      
+      </nav>
+    </header>
+    <main>
+      <nav>
+        
+        <a class="left" href="/">« home</a>
+        
+        
+        <a class="right" href="/">home »</a>
+        
+      </nav>
+      <section class="content">
+        <article>
+          <p>Creating a shader in Unity that receives lightmap data is harder than you would think… Here are three tips.</p>
+<p>Code: <a href="https://gist.github.com/jimfleming/5937437">https://gist.github.com/jimfleming/5937437</a></p>
+<p><strong>1. Surface shaders won’t work</strong></p>
+<p>The first thing to know is that you must use a <a href="http://docs.unity3d.com/Documentation/Components/SL-ShaderPrograms.html">vertex/fragment shader</a> and not a <a href="http://docs.unity3d.com/Documentation/Components/SL-SurfaceShaders.html">surface shader</a>. Unity’s ShaderLab syntax will also work correctly, albeit slightly differently.</p>
+<p>This is because, in Unity, surface shaders are “expanded” into vertex/fragment shaders. When this happens the necessary lightmapping variables are defined “for you”. Because of this, either you get an error for not defining them when you try to access them (during the expansion step) or you get an error for redefining them (during the final shader compile step).</p>
+<p><strong>2. Unity’s unity_LightmapST is misnamed</strong></p>
+<p>Another detail is that you must use the correct variables that Unity sets aside for passing in lightmap data:</p>
+<pre><code>sampler2D unity_Lightmap;
+float4 unity_LightmapST;
+</code></pre><p>That second variable holds the lightmaps atlas data. Its name is important because its named incorrectly. Normally variables post-fixed with </p>
+<p>_ST will be populated by Unity with the associated shader property’s atlas. The lightmap atlas, however, leaves out the underscore. This is problematic since one of the useful transformation functions (</p>
+<p>TRANSFORM_TEX defined in UnityCG.cginc) expects the underscore:</p>
+<pre><code>#define TRANSFORM_TEX(tex,name) (tex.xy * name##_ST.xy + name##_ST.zw)
+</code></pre><p>Because of this you need to write this part by hand, as such:</p>
+<p>o.uv1 = i.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;</p>
+<p>Note, with many shaders in Unity it is helpful to include this line which makes some helper functions available for working with lightmaps:</p>
+<pre><code>#include &quot;UnityCG.cginc&quot;
+</code></pre><p><strong>3. Use the decoder function Unity provides</strong></p>
+<p>The next important step is to “decode” the lightmap data correctly. The varies by platform but Unity provides a handy function to do this for you:</p>
+<pre><code>// Decodes lightmaps:
+// - doubleLDR encoded on GLES
+// - RGBM encoded with range [0;8] on other platforms using surface shaders
+inline fixed3 DecodeLightmap(fixed4 color) {
+    #if defined(SHADER_API_GLES) &amp;&amp; defined(SHADER_API_MOBILE)
+        return 2.0 * color.rgb;
+    #else
+        return (8.0 * color.a) * color.rgb;
+    #endif
+}
+</code></pre><p>This function takes the color value of the lightmap pixel in our fragment shader and modifies it according to the platform.</p>
+<p>That’s it for now. Hope it helped.</p>
+
+        </article>
+      </section>
+    </main>
+    <footer>&copy; 2014 Barking Mouse Studio. All Rights Reserved.</footer>
+  </body>
+</html>

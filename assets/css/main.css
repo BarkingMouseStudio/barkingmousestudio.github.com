@@ -1,0 +1,482 @@
+/*
+  background: rgba(11, 158, 166, 0.6);  aqua
+  background: rgba(66, 116, 166, 0.7);  blue
+  background: rgba(236, 198, 75, 0.8);  yellow
+
+  background: #4b5a64;
+  background: #1f282d;
+  background: #d4d6d7;
+  #adaeaf
+*/
+
+section, header, footer, menu, aside, article, nav, figure { display: block; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #1f282d;
+  font-size: 18px;
+  font-weight: 300;
+  min-width: 800px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 28px;
+  float: left;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+h4 {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(11, 158, 166);
+}
+
+a:hover {
+  color: rgb(236, 198, 75);
+}
+
+a img {padding-bottom: 24px;}
+
+header {
+  line-height: 36px;
+  background-color: #fff;
+  padding: 0 5%;
+  overflow: hidden;
+}
+
+header a, #hero a {
+  color: #1f282d;
+  display: inline-block;
+  padding: 0 12px;
+}
+
+header a:hover, #hero a:hover {
+  color: rgb(236, 198, 75);
+  background: #000;
+}
+
+header nav {
+  float: right;
+  margin-top: 18px;
+  text-align: right;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  position: relative;
+}
+
+figure div {
+  background-color: #4274a6;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+figure a {
+  display: block;
+  text-decoration: none !important;
+}
+
+figure figcaption {
+  line-height: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+figure a figcaption {
+  display: block;
+  background: #0b9ea6;
+  color: #f1f3f4;
+}
+
+figure a:hover figcaption {
+  color: rgb(236, 198, 75);
+  background: #000;
+}
+
+pre {
+  overflow: scroll;
+  background: #f1f3f4;
+  padding: 24px;
+}
+
+section {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  position: relative;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+main nav {
+  padding: 12px 5%;
+  background: #1f282d;
+  color: #fff;
+  margin: 0;
+  z-index: 1;
+  overflow: auto;
+}
+
+main nav a {
+  color: #fff;
+  padding: 0 12px;
+}
+
+main nav a:hover {
+  color: #1f282d;
+  background: #fff;
+}
+
+.left {float: left; left:0;}
+.right {float: right; right: 0;}
+.center {text-align: center;}
+.fixed {
+  top: 73px;
+  position: fixed;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header article {
+  padding: 40px 80px 60px;
+}
+
+.header p {
+  margin-bottom: 40px;
+}
+
+.collection {
+  overflow: hidden;
+  padding: 24px 2%;
+  text-align: center;
+}
+
+.content {
+  background: #fff;
+  clear: both;
+  overflow: auto;
+}
+
+.content a {
+  text-decoration: underline;
+}
+
+.content article {
+  width: 60%;
+  max-width: 800px;
+  background: #fff;
+  padding: 24px 0;
+  margin: 0 auto;
+}
+
+.content figure {
+  text-align: center;
+  max-width: 640px;
+  margin: 40px auto;
+}
+
+.content figure img {
+  max-width: 640px;
+}
+
+.haste main {
+  background: #4274a6;
+  color: #f1f3f4;
+}
+
+.haste .header {
+  background: url(/assets/images/haste_window.png) no-repeat -140px center;
+  width: 624px;
+  padding-left: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.haste figure figcaption {
+  background: #4274a6;
+  line-height: 60px;
+  color: #f1f3f4;
+}
+
+.assetstore {
+  display: inline-block;
+  border-radius: 10px;
+  color: #f1f3f4;
+  text-align: right;
+  border-bottom: 8px solid rgb(0, 155, 202);
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 10px 12px 10px 72px;
+  background: black url(/assets/images/unity_logo.png) no-repeat 10px center;
+  background-size: 48px 48px;
+}
+
+.assetstore span {
+  display: block;
+}
+
+.assetstore .intro {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.assetstore .title {
+  font-size: 24px;
+  line-height: 1em;
+}
+
+.appstore {
+  display: block;
+  width: 150px;
+  height: 44px;
+  background: url(/assets/images/appstore.png) no-repeat;
+  background-size: 150px 44px;
+  margin: 20px auto;
+}
+
+.playstore {
+  display: block;
+  width: 126px;
+  height: 44px;
+  background: url(/assets/images/playstore.png) no-repeat;
+  background-size: 126px 44px;
+  margin: 20px auto;
+}
+
+.standard, .overlay {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+}
+
+.overlay {
+  background-color: transparent;
+}
+
+.overlay a {
+  color: #fff;
+}
+
+.overlay a:hover {
+  color: rgb(236, 198, 75);
+  background: #000;
+}
+
+.image {
+  width: 50%;
+  position: absolute;
+  top: 52px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f1f3f4;
+}
+
+.image figure {
+  background-color: #f1f3f4;
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 5%;
+  z-index: 0;
+  width: 90%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#hero figure {
+  height: 85vh;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hero article {
+  z-index: 5;
+  text-align: center;
+  position: absolute;
+  color: #f1f3f4;
+  width: 100%;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+#hero article div {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  left: 0;
+}
+
+#hero article a {
+  font-size: 48px;
+  color: #fff;
+}
+
+#hero article a:hover {
+  color: rgb(236, 198, 75);
+  background: #000;
+}
+
+#projects {
+  background: #f1f3f4;
+  min-height: 95vh;
+}
+
+.project {
+  width: 29%;
+  margin: 24px 2% 48px 2%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.project figure div {
+  width: auto;
+  height: 300px;
+}
+
+#posts {
+  overflow: hidden;
+  padding: 48px 2%;
+  background: #1f282d url(/assets/images/line.png) repeat-y 50% 0;
+  text-align: center;
+}
+
+#posts.collection {
+  background-image: none;
+}
+
+#posts h2 {
+  color: #f1f3f4;
+  background: #1f282d;
+}
+
+#posts-left {
+  float: left;
+  width: 50%;
+}
+
+#posts-right {
+  float: right;
+  width: 50%;
+  margin-top: 48px;
+}
+
+#posts #posts-left .post {
+  display: block;
+  padding: 48px 15% 48px 0;
+  margin-left: 15%;
+  background: url(/assets/images/line.png) repeat-x 0 96px;
+  z-index: 2;
+}
+
+#posts #posts-right .post {
+  display: block;
+  padding: 48px 0 48px 15%;
+  margin-right: 15%;
+  background: url(/assets/images/line.png) repeat-x 0 96px;
+  z-index: 2;
+}
+
+#post .content {
+  width: 40%;
+  min-height: 72vh;
+  padding: 48px 5%;
+}
+
+#post .content article {
+  width: 100%;
+}
+
+#post h2 {
+  margin: 0;
+}
+
+#post h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#posts .post {
+  padding: 48px 15%;
+  opacity: 0;
+  z-index: 0;
+  position: relative;
+}
+
+#posts .post time {
+  display: block;
+  background: #086d73;
+  color: #7db0b4;
+  line-height: 40px;
+}
+
+#posts .post article {
+  background: #fff;
+  padding: 48px;
+  text-align: left;
+}
+
+#posts .post article p {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  clear: both;
+  background: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 0 5%;
+  line-height: 48px;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}

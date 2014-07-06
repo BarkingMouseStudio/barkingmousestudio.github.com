@@ -1,118 +1,632 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-US">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+
     <title>Barking Mouse Studio</title>
+    <meta name="description" content="Adventures and exploits from the world of indie game developement.">
 
-    <meta name="description" content="We're Barking Mouse Studio. We're making Lost Toys.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href='//fonts.googleapis.com/css?family=Fira+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/favicon.ico" rel="icon" type="image/x-icon">
 
-    <!-- Open Graph -->
-    <meta property="og:description" content="We're Barking Mouse Studio. We're making Lost Toys." />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Barking Mouse Studio" />
-    <meta property="og:title" content="Lost Toys" />
-    <meta property="og:url" content="http://barkingmousestudio.com" />
-    <meta property="og:video" content="http://vimeo.com/moogaloop.swf?clip_id=66695448&server=vimeo.com&fullscreen=1" />
-    <meta property="og:image" content="http://barkingmousestudio.com/images/screenshot2.jpg" />
-    <meta property="og:video:width" content="640" />
-    <meta property="og:video:height" content="360" />
-    <meta property="og:video:type" content="application/x-shockwave-flash" />
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <!-- Smart banner -->
-    <!-- meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" -->
-
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600|IM+Fell+English" rel="stylesheet">
-    <link href="styles/main.css" rel="stylesheet" />
-
-    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+"//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);mixpanel.init("172668be62adcdb2b75b86749e239fe1");</script>
+    <script type="text/javascript">
+      window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+      window.analytics.load("250gkc2lok");
+      window.analytics.page('Home');
+    </script>
   </head>
   <body>
-
-    <div class="header">
-      <div class="hgroup">
-        <h1>Lost Toys</h1>
-        <h2>A meditative puzzle game</h2>
-        <!-- http://linkmaker.itunes.apple.com/us/ -->
-        <!-- a href="http://appstore.com/<appname>/" class="download"></a -->
-        <div class="awards">
-          <img src="/images/SenseOfWonder.png" alt="Best Game Design - Sense of Wonder - Tokyo Game Show - 2013">
-          <img src="/images/Codame.png" alt="Most Artistic - Developer Showcase - Codame - 2013">
-          <img src="/images/CasualConnect.png" alt="Most Promising - Casual Connect - San Francisco - 2013">
-          <img src="/images/Minibooth.png" alt="Official Selection - MiniBooth - Indie MegaBooth - 2013">
+    <header id="header" class="overlay">
+      <h1><a href="/" rel="bookmark">Barking Mouse Studio</a></h1>
+      <nav>
+      
+        <a href="/pages/press">Press »</a>
+      
+        <a href="/pages/writing">Writing »</a>
+      
+        <a href="/pages/consulting">Consulting »</a>
+      
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div id="p-0">
+          <figure
+            style="background-image: url(/assets/images/2014_05_20_10_29_31.jpg);"
+            data-width=""
+            data-height=""
+            data-alt="Lights, Camera, Action">
+          </figure>
+          <article>
+            <div>
+              <h2><a href="/posts/lights-camera-action">Lights, Camera, Action »</a></h2>
+              <p>We had a busy weekend talking about Barking Mouse studio with Autodesk.</p>
+            </div>
+          </article>
         </div>
-      </div>
-      <button class="watch" title="Watch Lost Toys trailer"></button>
-    </div>
-
-    <div class="press">
-      <blockquote cite="http://codame.com/post/58535721163/codame-featured-game-lost-toys-with-the-codame">
-        <span>&ldquo;The visuals on Lost Toys are incredible.&rdquo; &#8212;</span>
-        <a href="http://codame.com/post/58535721163/codame-featured-game-lost-toys-with-the-codame">Codame</a>
-      </blockquote>
-
-      <blockquote cite="http://indiehaven.com/lost-toys-brings-a-zen-like-gameplay-to-tablet/">
-        <span>&ldquo;Lost Toys is the type of game you rarely see on mobile and tablet, which is why it seems so refreshing. It’s a game that isn’t about creating tension as it is about releasing it, which is the biggest draw.&rdquo; &#8212;</span>
-        <a href="http://indiehaven.com/lost-toys-brings-a-zen-like-gameplay-to-tablet/">Indie Haven</a>
-      </blockquote>
-
-      <blockquote cite="http://www.joystiq.com/2013/08/06/lost-toys-picks-up-most-promising-game-award-at-casual-connect-u">
-        <span>&ldquo;The game has a touching, haunting tone that players at Casual Connect seemed to ... well, connect with.&rdquo; &#8212;</span>
-        <a href="http://www.joystiq.com/2013/08/06/lost-toys-picks-up-most-promising-game-award-at-casual-connect-u">Joystiq</a>
-      </blockquote>
-
-      <blockquote cite="http://harryballs.com/2013/08/05/lost-toys-puzzle-game-named-most-promising/">
-        <span>&ldquo;Its a simple premise with a clean, beautiful, peaceful execution.&rdquo; &#8212;</span>
-        <a href="http://harryballs.com/2013/08/05/lost-toys-puzzle-game-named-most-promising/">Harry Balls</a>
-      </blockquote>
-
-      <p>
-        Learn about our experience making Lost Toys on <a href="http://gamesauce.org/news/2013/08/26/lost-toys-landing-on-games/">Gamesauce</a>.
-      </p>
-    </div>
-
-    <div class="signup">
-      <div class="form">
-        <h3>Join Us</h3>
-        <h4>For updates about our games and the occasional beta invite.</h4>
-        <div class="content">
-          <input type="email" class="email" placeholder="Your email address...">
-          <button class="submit">Signup</button>
-      	</div>
-        <div class="error"></div>
-      </div>
-      <div class="thanks">
-        <h3>Thanks for Signing Up!</h3>
-        <p>We're working hard to release our game soon and we will let you know when its ready.</p>
-      </div>
-    </div>
-
-    <div class="screenshots"></div>
-
-    <div class="links">
-      <a href="https://www.facebook.com/BarkingMouseStudio">facebook</a>
-      <a href="http://cheese.barkingmousestudio.com/">blog</a>
-      <a href="http://barkingmousestudio.com/press.html">press</a>
-      <a href="http://support.barkingmousestudio.com/">support</a>
-    </div>
-
-    <div class="footer">
-      <div class="legal">&copy; 2013, Barking Mouse Studio, Inc.</div>
-      <a href="https://mixpanel.com/f/partner" class="mixpanel"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>
-    </div>
-
-    <div class="modal">
-      <div class="content">
-        <iframe class="video" src="//player.vimeo.com/video/66695448?api=1&portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-        <p>Click outside of the video to close</p>
-      </div>
-    </div>
-
-    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-    <script src="scripts/main.js"></script>
-
+      </section>
+      <div class="waypoint"></div>
+      <section id="projects" class="collection">
+        <h2>Current Projects</h2>
+        
+        <div class="project j-0">
+            <figure>
+              <a class="title" href="/projects/sweat-swearing-tears">
+                <div
+                style="background-image: url(/assets/thumbnails/jimwithtoy.jpg);"
+                data-width=""
+                data-height=""
+                data-alt="Sweat, Swearing &amp; Tears"/>
+                </div>
+                <figcaption>Sweat, Swearing &amp; Tears »</figcaption>
+              </a>
+          </figure>
+        </div>
+        
+        <div class="project j-1">
+            <figure>
+              <a class="title" href="/projects/haste-unity3d-plugin">
+                <div
+                style="background-image: url(/assets/thumbnails/haste_logo.png);"
+                data-width=""
+                data-height=""
+                data-alt="Haste Unity3D Plugin"/>
+                </div>
+                <figcaption>Haste Unity3D Plugin »</figcaption>
+              </a>
+          </figure>
+        </div>
+        
+        <div class="project j-2">
+            <figure>
+              <a class="title" href="/projects/lost-toys">
+                <div
+                style="background-image: url(/assets/thumbnails/firetruck.png);"
+                data-width=""
+                data-height=""
+                data-alt="Lost Toys"/>
+                </div>
+                <figcaption>Lost Toys »</figcaption>
+              </a>
+          </figure>
+        </div>
+        
+      </section>
+      <section id="posts">
+        <h2>Timeline</h2>
+        <div id="posts-left"></div>
+        <div id="posts-right"></div>
+        
+        
+        
+        
+        <div id="p-1" class="post">
+          <figure><a class="title" href="/posts/jsfmt"><img src="line.png" data-src="/assets/thumbnails/2014_05_13_10_25_07.png" alt="jsfmt"/><figcaption>jsfmt »</figcaption></a></figure>
+          <time>2 months ago</time>
+          <article>
+            <p>It&#39;s not game related, but Jim&#39;s open source rdio hack day project is blowing up. It even got retweeted by Brendan Eich, creator of javascript. My favorite quote so far is by Charlie Robbins &quot;jsfmt changes everything&quot;.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-2" class="post">
+          <figure><a class="title" href="/posts/android-version"><img src="line.png" data-src="/assets/thumbnails/2014_04_11_12_35_33.jpg" alt="Android Version"/><figcaption>Android Version »</figcaption></a></figure>
+          <time>3 months ago</time>
+          <article>
+            <p>Working on an Android version this week. I&#39;ve got a beta build up and running. I&#39;m not quite ready for testers, but I&#39;ll send out the word once I am. Now on to do my taxes...</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-3" class="post">
+          <figure><a class="title" href="/posts/new-prototype"><img src="line.png" data-src="/assets/thumbnails/2014_04_01_20_24_06.jpg" alt="New Prototype"/><figcaption>New Prototype »</figcaption></a></figure>
+          <time>3 months ago</time>
+          <article>
+            <p>Jim and Mouse prototyping a new game.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-4" class="post">
+          <figure><a class="title" href="/posts/sucker-punch"><img src="line.png" data-src="/assets/thumbnails/2014_03_31_12_53_56.png" alt="Sucker Punch"/><figcaption>Sucker Punch »</figcaption></a></figure>
+          <time>4 months ago</time>
+          <article>
+            <p>Sometimes reviews just sucker punch you in the gut and leave you walking on air the rest of the day. I normally avoid reading reviews, but I&#39;m glad Jim made me read this one. I don&#39;t remember talking to them at SXSW but I&#39;m so happy we did. It&#39;s a mucky rainy day in SF and we&#39;ve had walking colds for a couple weeks, but I feel fantastic right now.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-5" class="post">
+          <figure><a class="title" href="/posts/sxsw-prep"><img src="line.png" data-src="/assets/thumbnails/2014_03_05_11_28_05.png" alt="SXSW prep."/><figcaption>SXSW prep. »</figcaption></a></figure>
+          <time>4 months ago</time>
+          <article>
+            <p>Cords, cables, and laptops! Oh, my! All this SXSW prep is taking over my living room.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-6" class="post">
+          <figure><a class="title" href="/posts/we-re-featured"><img src="line.png" data-src="/assets/thumbnails/2014_01_09_13_47_11.jpg" alt="We&#x27;re Featured!"/><figcaption>We&#x27;re Featured! »</figcaption></a></figure>
+          <time>6 months ago</time>
+          <article>
+            <p>We&#39;re FEATURED in the App Store! They gave us both a Best New Games slot on the main page and And! AND!!! a mini banner on the games page!</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-7" class="post">
+          <figure><a class="title" href="/posts/live-in-new-zealand"><img src="line.png" data-src="/assets/thumbnails/2014_01_08_08_28_12.jpg" alt="Live in New Zealand"/><figcaption>Live in New Zealand »</figcaption></a></figure>
+          <time>6 months ago</time>
+          <article>
+            <p>We&#39;re live in New Zealand! My stomach hurts.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-8" class="post">
+          <figure><a class="title" href="/posts/thanks-apple"><img src="line.png" data-src="/assets/thumbnails/2013_12_29_16_40_09.png" alt="Thanks Apple!"/><figcaption>Thanks Apple! »</figcaption></a></figure>
+          <time>6 months ago</time>
+          <article>
+            <p>We passed! I&#39;m so glad the wait is over. It was like waiting for my SAT scores all over again.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-9" class="post">
+          <figure><a class="title" href="/posts/omg-nails"><img src="line.png" data-src="/assets/thumbnails/2013_12_28_17_00_26.png" alt="Omg, nails!"/><figcaption>Omg, nails! »</figcaption></a></figure>
+          <time>6 months ago</time>
+          <article>
+            <p>Still waiting for review.... The tension is getting to me. I have no fingernails left because I&#39;ve bitten them all off.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-10" class="post">
+          <figure><a class="title" href="/posts/celebrations"><img src="line.png" data-src="/assets/thumbnails/2013_12_18_10_43_08.jpg" alt="Celebrations"/><figcaption>Celebrations »</figcaption></a></figure>
+          <time>7 months ago</time>
+          <article>
+            <p>Celebratory bottle of cheep red and a christmas cookie! Plus game. As a Christmas present, I spared you the duckface version.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-11" class="post">
+          <figure><a class="title" href="/posts/in-review"><img src="line.png" data-src="/assets/thumbnails/2013_12_17_20_47_37.png" alt="In Review!"/><figcaption>In Review! »</figcaption></a></figure>
+          <time>7 months ago</time>
+          <article>
+            <p>Uploaded and waiting for review!</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-12" class="post">
+          <figure><a class="title" href="/posts/screenies"><img src="line.png" data-src="/assets/thumbnails/2013_12_16_15_36_58.png" alt="Screenies"/><figcaption>Screenies »</figcaption></a></figure>
+          <time>7 months ago</time>
+          <article>
+            <p>Here are the final screen shots (I hope) that are getting uploaded to Apple. English version.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-13" class="post">
+          <figure><a class="title" href="/posts/pixel-art"><img src="line.png" data-src="/assets/thumbnails/2013_12_14_16_24_07.jpg" alt="Pixel Art"/><figcaption>Pixel Art »</figcaption></a></figure>
+          <time>7 months ago</time>
+          <article>
+            <p>Took a break from my normal stuff to go to a pixel art workshop today. I don&#39;t think I&#39;ll make a pixel art game, but the technique was interesting. Here&#39;s the coffee cup I made.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-14" class="post">
+          <figure><a class="title" href="/posts/final-steps"><img src="line.png" data-src="/assets/thumbnails/2013_12_11_13_42_20.png" alt="Final Steps"/><figcaption>Final Steps »</figcaption></a></figure>
+          <time>7 months ago</time>
+          <article>
+            <p>I&#39;ve got all of our achievements setup in game center. You win a Skin Horse Award for completing chapter 5 without hints.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-15" class="post">
+          <figure><a class="title" href="/posts/qa-party-time"><img src="line.png" data-src="/assets/thumbnails/2013_12_05_18_10_04.jpg" alt="QA Party Time"/><figcaption>QA Party Time »</figcaption></a></figure>
+          <time>7 months ago</time>
+          <article>
+            <p>We&#39;re in QA! Jim and I sent off the build at 4am SF time. No matter what, it always comes down to the wire.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-16" class="post">
+          <figure><a class="title" href="/posts/now-with-translations"><img src="line.png" data-src="/assets/thumbnails/2013_11_24_10_36_43.png" alt="Now with Translations"/><figcaption>Now with Translations »</figcaption></a></figure>
+          <time>7 months ago</time>
+          <article>
+            <p>We got the our text back from the translation service today! We realized while in Japan that if we reached out, we&#39;d have fans there.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-17" class="post">
+          <figure><a class="title" href="/posts/home-stretch"><img src="line.png" data-src="/assets/thumbnails/2013_11_21_08_34_38.png" alt="Home Stretch"/><figcaption>Home Stretch »</figcaption></a></figure>
+          <time>8 months ago</time>
+          <article>
+            <p>We&#39;re down to the home stretch. This is what Jim and I have to get done before we send off the game for QA testing in the beginning of December. I fixed the last major bug on my list yesterday, so it&#39;s all polish left.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-18" class="post">
+          <figure><a class="title" href="/posts/new-poster"><img src="line.png" data-src="/assets/thumbnails/2013_11_07_12_46_00.png" alt="New Poster"/><figcaption>New Poster »</figcaption></a></figure>
+          <time>8 months ago</time>
+          <article>
+            <p>I&#39;ve been working on a new poster this morning and took new screen shots for it. There&#39;s one from each of the first four chapters.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-19" class="post">
+          <figure><a class="title" href="/posts/ooh-pretty"><img src="line.png" data-src="/assets/thumbnails/2013_11_01_13_01_17.png" alt="OOh! Pretty!"/><figcaption>OOh! Pretty! »</figcaption></a></figure>
+          <time>8 months ago</time>
+          <article>
+            <p>I&#39;ve been fine tuning the lighting and UX all week while Jim has been focusing on the depth of field shader. I feel like we&#39;ve jumped up another couple steps in how the game feels and looks. Here&#39;s what the scottie dog on level two looks like now.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-20" class="post">
+          <figure><a class="title" href="/posts/crunch-is-the-worst"><img src="line.png" data-src="/assets/thumbnails/2013_10_28_11_01_00.png" alt="Crunch is the Worst"/><figcaption>Crunch is the Worst »</figcaption></a></figure>
+          <time>8 months ago</time>
+          <article>
+            <p>tl;dr There are some lessons that I have to keep learning over and over again.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-21" class="post">
+          <figure><a class="title" href="/posts/iga-or-bust"><img src="line.png" data-src="/assets/thumbnails/2013_10_20_09_52_43.png" alt="IGA or Bust"/><figcaption>IGA or Bust »</figcaption></a></figure>
+          <time>9 months ago</time>
+          <article>
+            <p>Jim and I got in our IGA application at 10:40 last night. A comfortable 80 minutes before the deadline. Here&#39;s one of the latest screenshots. It&#39;s of the raygun in chapter 3.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-22" class="post">
+          <figure><a class="title" href="/posts/performance-scare"><img src="line.png" data-src="/assets/thumbnails/2013_10_08_20_37_28.png" alt="Performance Scare"/><figcaption>Performance Scare »</figcaption></a></figure>
+          <time>9 months ago</time>
+          <article>
+            <p>Saturday was a bit of a scare. We did performance testing on retina iPads Friday night and the we were getting rates of 24fps and maxing out the GPU. We finally got them resolved around 10 pm after starting at 7:30 am. Now the game runs at a super solid 30 fps on retina and has double percentages of unused GPU.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-23" class="post">
+          <figure><a class="title" href="/posts/more-chapters-3-laura"><img src="line.png" data-src="/assets/thumbnails/2013_10_04_13_16_13.png" alt="More Chapters &lt;3 Laura"/><figcaption>More Chapters &lt;3 Laura »</figcaption></a></figure>
+          <time>9 months ago</time>
+          <article>
+            <p>I&#39;m sooo excited. After months of just having chapters one and two in the game, we put in chapters three and four in today! Thank you everyone that contributed! Especially the wonderful Laura Jolly.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-24" class="post">
+          <figure><a class="title" href="/posts/tokyo-rock-star"><img src="line.png" data-src="/assets/thumbnails/2013_09_24_14_39_47.jpg" alt="Tokyo Rock Star"/><figcaption>Tokyo Rock Star »</figcaption></a></figure>
+          <time>10 months ago</time>
+          <article>
+            <p>Jim and I were in Tokyo last week for the Tokyo Game Show Sense of Wonder Night.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-25" class="post">
+          <figure><a class="title" href="/posts/website-update"><img src="line.png" data-src="/assets/thumbnails/2013_09_15_18_50_08.png" alt="Website Update"/><figcaption>Website Update »</figcaption></a></figure>
+          <time>10 months ago</time>
+          <article>
+            <p>Jim spent the weekend updating our website. I spent the weekend staring at our updated website because it looks so great.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-26" class="post">
+          <figure><a class="title" href="/posts/put-down-the-photoshop"><img src="line.png" data-src="/assets/thumbnails/2013_09_12_16_21_45.png" alt="Put Down the Photoshop"/><figcaption>Put Down the Photoshop »</figcaption></a></figure>
+          <time>10 months ago</time>
+          <article>
+            <p>Got a little too happy in photoshop today and made this. It&#39;s a color pallet test for chapter 4 and a preview of the bird level.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-27" class="post">
+          <figure><a class="title" href="/posts/argh-pax-emotions"><img src="line.png" data-src="/assets/thumbnails/2013_09_04_15_39_05.jpg" alt="Argh! Pax! Emotions!"/><figcaption>Argh! Pax! Emotions! »</figcaption></a></figure>
+          <time>10 months ago</time>
+          <article>
+            <p>tl;dr; Making a game is a huge roller coaster of emotions.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-28" class="post">
+          <figure><a class="title" href="/posts/on-the-road-to-pax"><img src="line.png" data-src="/assets/thumbnails/2013_08_29_17_30_16.jpg" alt="On the Road to Pax"/><figcaption>On the Road to Pax »</figcaption></a></figure>
+          <time>10 months ago</time>
+          <article>
+            <p>Jim on the plane to PAX.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-29" class="post">
+          <figure><a class="title" href="/posts/toy-soliders"><img src="line.png" data-src="/assets/thumbnails/2013_08_27_13_38_57.jpg" alt="Toy Soliders"/><figcaption>Toy Soliders »</figcaption></a></figure>
+          <time>10 months ago</time>
+          <article>
+            <p>Spent this morning looking for inspiration for the toy soldier level.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-30" class="post">
+          <figure><a class="title" href="/posts/laura-s-super-cool-lion"><img src="line.png" data-src="/assets/thumbnails/2013_08_22_20_23_08.png" alt="Laura&#x27;s Super Cool Lion"/><figcaption>Laura&#x27;s Super Cool Lion »</figcaption></a></figure>
+          <time>11 months ago</time>
+          <article>
+            <p>Sneak preview of our new lion level. Courtesy of the fantastic  Laura Jolly.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-31" class="post">
+          <figure><a class="title" href="/posts/most-promising-game"><img src="line.png" data-src="/assets/thumbnails/2013_08_02_10_25_22.jpg" alt="Most Promising Game!"/><figcaption>Most Promising Game! »</figcaption></a></figure>
+          <time>11 months ago</time>
+          <article>
+            <p>Lost Toys won &quot;Most Promising Game&quot; in the Indie Prize Showcase, <a href="http://www.indieprize.org/games/index.html">http://www.indieprize.org/games/index.html</a>, at Casual Connect.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-32" class="post">
+          <figure><a class="title" href="/posts/t-shirts"><img src="line.png" data-src="/assets/thumbnails/2013_07_25_08_29_55.jpg" alt="T-Shirts"/><figcaption>T-Shirts »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Getting some Lost Toys shirts made. Here&#39;s the design.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-33" class="post">
+          <figure><a class="title" href="/posts/poster-fun"><img src="line.png" data-src="/assets/thumbnails/2013_07_24_10_38_27.png" alt="Poster Fun"/><figcaption>Poster Fun »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>This is the poster I made. It took about 1/20th the time that the business cards took, and I&#39;m way happier with it.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-34" class="post">
+          <figure><a class="title" href="/posts/business-cards"><img src="line.png" data-src="/assets/thumbnails/2013_07_24_10_36_25.jpg" alt="Business Cards"/><figcaption>Business Cards »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Finally ordered some business cards this week. I spent most of Saturday obsessing over the design and then finally giving up and calling this good enough.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-35" class="post">
+          <figure><a class="title" href="/posts/iphone-support"><img src="line.png" data-src="/assets/thumbnails/2013_07_17_10_14_24.png" alt="iPhone Support"/><figcaption>iPhone Support »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Now with iPhone support. :)</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-36" class="post">
+          <figure><a class="title" href="/posts/grumble-trig-grumble"><img src="line.png" data-src="/assets/thumbnails/2013_07_11_09_44_09.png" alt="Grumble, Trig, Grumble"/><figcaption>Grumble, Trig, Grumble »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>I really really should have paid more attention in trig...</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-37" class="post">
+          <figure><a class="title" href="/posts/bad-bugs-go-away"><img src="line.png" data-src="/assets/thumbnails/2013_06_25_14_16_55.png" alt="Bad Bugs, Go Away"/><figcaption>Bad Bugs, Go Away »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Bug smushing day! 17 changed files with 80 additions and 48 deletions.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-38" class="post">
+          <figure><a class="title" href="/posts/thanks-for-the-feedback"><img src="line.png" data-src="/assets/thumbnails/2013_06_24_12_34_05.png" alt="Thanks for the Feedback"/><figcaption>Thanks for the Feedback »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Based on some excellent feedback, the toys return to their original position when undoing a turn. It&#39;s amazing what a difference it makes.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-39" class="post">
+          <figure><a class="title" href="/posts/ending-sequence"><img src="line.png" data-src="/assets/thumbnails/2013_06_21_12_10_25.png" alt="Ending Sequence"/><figcaption>Ending Sequence »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>I spent the morning coding the ending sequence for the game and looking for someone that makes custom toys. Wouldn&#39;t the ambulance level be cool to play with irl? I think so, but I&#39;m biased.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-40" class="post">
+          <figure><a class="title" href="/posts/new-level"><img src="line.png" data-src="/assets/thumbnails/2013_06_20_11_04_15.png" alt="New Level"/><figcaption>New Level »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Added a new level to the game today.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-41" class="post">
+          <figure><a class="title" href="/posts/more-spoilers"><img src="line.png" data-src="/assets/thumbnails/2013_06_18_12_29_32.png" alt="More Spoilers!"/><figcaption>More Spoilers! »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>More Spoilers! I&#39;ve got up solution videos for chapter two. <a href="https://vimeo.com/album/2428411">https://vimeo.com/album/2428411</a></p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-42" class="post">
+          <figure><a class="title" href="/posts/spoilers"><img src="line.png" data-src="/assets/thumbnails/2013_06_13_12_32_06.png" alt="Spoilers!"/><figcaption>Spoilers! »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Spoilers!  I posted solutions to chapter one on vimeo. <a href="https://vimeo.com/album/2422555">https://vimeo.com/album/2422555</a></p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div id="p-43" class="post">
+          <figure><a class="title" href="/posts/added-thumb-print"><img src="line.png" data-src="/assets/thumbnails/2013_06_12_11_26_30.jpg" alt="Added Thumb Print"/><figcaption>Added Thumb Print »</figcaption></a></figure>
+          <time>a year ago</time>
+          <article>
+            <p>Added a thumb print that shows up when I&#39;m playing the game on my computer, so that the game play video makes a little more sense... Now I just have to update the game play video.</p>
+          </article>
+          <div class="marker"></div>
+          <div class="line"></div>
+        </div>
+        
+        
+      </section>
+    </main>
+    <footer>&copy; 2014 Barking Mouse Studio. All Rights Reserved.</footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/javascript/waypoints.min.js"></script>
+    <script src="/assets/javascript/unveil.js"></script>
+    <script src="/assets/javascript/main.js"></script>
   </body>
 </html>
