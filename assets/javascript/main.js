@@ -6,13 +6,13 @@
   left = document.querySelector('#timeline-left');
   right = document.querySelector('#timeline-right');
 
-  $("img").unveil(400, function() {
+  $('img').unveil(400, function() {
     $(this).load(function() {
 
       var element = this;
       while(element.parentNode) {
         element = element.parentNode;
-        if (element.className == "timeline-post") {
+        if (element.className == 'timeline-post') {
           break;
         }
       }
@@ -28,28 +28,32 @@
   });
 
 
-  $('.waypoint').each( function(i) {
-    var $el = $(this),
-    $section = $el.next(),
-    height = $section.outerHeight(true);
+  var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windowsce|palm/i.test(navigator.userAgent.toLowerCase()));
+  if (!mobile) {
+    $head.attr('class', 'fixed');
 
-    $el.waypoint(function(direction) {
-      if(direction == 'down') {
-        $section.attr('class', "collection fixed");
-        $el.css("height", 15 + height);
-        if (i == 0) {
-          $head.attr('class', "standard");
+    var figures = document.getElementsByTagName('figure');
+
+    for (var i = 0; i < figures.length; i++) {
+      figures[i].style.backgroundAttachment = 'fixed';
+    }
+
+    $('.waypoint').each( function(i) {
+      var $el = $(this),
+      $section = $el.next(),
+      height = $section.outerHeight(true);
+
+      $el.waypoint(function(direction) {
+        if(direction == 'down') {
+          $section.attr('class', 'collection fixed');
+          $el.css('height', 15 + height);
         }
-      }
 
-      if(direction == 'up'){
-        $section.attr('class', "collection");
-        $el.css("height", 0);
-        if (i == 0) {
-          $head.attr('class', "overlay");
+        if(direction == 'up'){
+          $section.attr('class', 'collection');
+          $el.css('height', 0);
         }
-      }
-    }, {offset: '73px'});
-  });
-
+      }, {offset: '73px'});
+    });
+  }
 })();

@@ -9,6 +9,8 @@
   #adaeaf
 */
 
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400);
+
 section, header, footer, menu, aside, article, nav, figure { display: block; }
 
 html,
@@ -53,7 +55,7 @@ a:hover {
   color: rgb(236, 198, 75);
 }
 
-a img {padding-bottom: 24px;}
+a img {padding-bottom: 24px; display: block;}
 
 iframe {
   margin: 0;
@@ -180,24 +182,12 @@ header nav {
   text-align: right;
 }
 
-header.standard, header.overlay {
+header.fixed {
   position: fixed;
   z-index: 10;
   left: 0;
   right: 0;
-}
-
-header.overlay {
-  background-color: transparent;
-}
-
-header.overlay a {
-  color: #fff;
-}
-
-header.overlay a:hover {
-  color: rgb(236, 198, 75);
-  background: #000;
+  top: 0;
 }
 
 
@@ -219,11 +209,11 @@ footer a {
   text-decoration: underline;
 }
 
+
 /* HERO
 ------------------------------------------ */
 #hero figure {
   height: 85vh;
-  background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -257,6 +247,7 @@ footer a {
   color: rgb(236, 198, 75);
   background: #000;
 }
+
 
 /* PROJECTS
 ------------------------------------------ */
