@@ -1,7 +1,6 @@
 (function() {
-  var posts,post,left,right, $head;
+  var posts,post,left,right,mobile;
 
-  $head = $('#header');
   posts = document.querySelectorAll('#timeline .timeline-post');
   left = document.querySelector('#timeline-left');
   right = document.querySelector('#timeline-right');
@@ -27,10 +26,9 @@
     });
   });
 
-
-  var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windowsce|palm/i.test(navigator.userAgent.toLowerCase()));
+  mobile = (/iphone|ipad|ipod|android|blackberry|mini|windowsce|palm/i.test(navigator.userAgent.toLowerCase()));
   if (!mobile) {
-    $head.attr('class', 'fixed');
+    $('#header').attr('class', 'fixed');
 
     var figures = document.getElementsByTagName('figure');
 
