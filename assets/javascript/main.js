@@ -27,7 +27,7 @@
   });
 
   mobile = (/iphone|ipad|ipod|android|blackberry|mini|windowsce|palm/i.test(navigator.userAgent.toLowerCase()));
-  if (!mobile) {
+  if (mobile) {
     document.querySelector('#projects').style.minHeight = '500px';
     document.querySelector('#hero figure').style.height = '600px';
     document.querySelector('#post .post-content').style.minHeight = '600px';
