@@ -28,9 +28,14 @@
 
   mobile = (/iphone|ipad|ipod|android|blackberry|mini|windowsce|palm/i.test(navigator.userAgent.toLowerCase()));
   if (mobile) {
-    document.querySelector('#projects').style.minHeight = '500px';
-    document.querySelector('#hero figure').style.height = '600px';
-    document.querySelector('#post .post-content').style.minHeight = '600px';
+    var projects = $('#projects')
+    if (projects.length) projects.style.minHeight = '500px';
+
+    var heroFigure = $('#hero figure')
+    if (heroFigure.length) heroFigure.style.height = '600px';
+
+    var postContent = $('#post .post-content')
+    if (postContent.length) postContent.style.minHeight = '600px';
 
   } else if ($('#home').length) {
 
