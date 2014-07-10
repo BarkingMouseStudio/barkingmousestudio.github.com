@@ -33,7 +33,7 @@
     document.querySelector('#post .post-content').style.minHeight = '600px';
 
   } else {
-    $('#header').attr('class', 'fixed');
+    $('#home #header').attr('class', 'fixed');
 
     var figures = document.getElementsByTagName('figure');
 
