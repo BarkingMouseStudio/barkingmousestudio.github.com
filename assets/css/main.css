@@ -49,13 +49,14 @@ h4 {
 a {
   text-decoration: none;
   color: rgb(11, 158, 166);
+  outline : none;
 }
 
 a:hover {
   color: rgb(236, 198, 75);
 }
 
-a img {padding-bottom: 24px; display: block;}
+a img {padding-bottom: 24px; display: block; border: none; outline : none;}
 
 iframe {
   margin: 0;
