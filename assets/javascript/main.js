@@ -32,8 +32,9 @@
     document.querySelector('#hero figure').style.height = '600px';
     document.querySelector('#post .post-content').style.minHeight = '600px';
 
-  } else {
-    $('#home #header').attr('class', 'fixed');
+  } else if ($('#home').length) {
+
+    $('#header').attr('class', 'fixed');
 
     var figures = document.getElementsByTagName('figure');
 
