@@ -235,8 +235,8 @@ footer a {
 #hero article div {
   position: absolute;
   bottom: 20px;
-  right: 0;
-  left: 0;
+  right: 20%;
+  left: 20%;
 }
 
 #hero article a {
