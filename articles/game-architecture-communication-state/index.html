@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+
+    <title>Barking Mouse Studio</title>
+    <meta name="description" content="Adventures and exploits from the world of indie game developement.">
+
+    <!-- Open Graph -->
+    <meta property="og:description" content="We're Barking Mouse Studio. We're making Lost Toys." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Barking Mouse Studio" />
+    <meta property="og:title" content="Makers of Lost Toys" />
+    <meta property="og:url" content="//barkingmousestudio.com" />
+    <meta property="og:video" content="//vimeo.com/moogaloop.swf?clip_id=66695448&server=vimeo.com&fullscreen=1" />
+    <meta property="og:image" content="//barkingmousestudio.com/heros/assets/2013_11_01_13_01_17.png" />
+    <meta property="og:video:width" content="640" />
+    <meta property="og:video:height" content="360" />
+    <meta property="og:video:type" content="application/x-shockwave-flash" />
+
+    <!-- Smart banner -->
+    <meta name="apple-itunes-app" content="app-id=675719361">
+
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/aleo:400,700/firasans:400,700/firamono:400">
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/favicon.ico" rel="icon" type="image/x-icon">
+
+    <!--[if IE]>
+    <style>
+      body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    </style>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+      window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+      window.analytics.load("250gkc2lok");
+      window.analytics.page('Home');
+    </script>
+  </head>
+
+  <body id="page" class="inner ">
+
+    <header id="header">
+      <h1><a href="/" rel="bookmark">Barking Mouse Studio</a></h1>
+      <nav>
+      
+        <a href="/pages/press">Press »</a>
+      
+        <a href="/pages/writing">Writing »</a>
+      
+        <a href="/pages/consulting">Consulting »</a>
+      
+      </nav>
+    </header>
+
+
+    <main>
+
+      <nav>
+        
+        <a class="left" href="/articles/unity-lightmaps">« Unity Lightmaps</a>
+        
+        
+        <a class="right" href="/">home »</a>
+        
+      </nav>
+
+      <section class="content">
+        <header>
+          <h2>Game Architecture — Communication &amp; State</h2>
+          <h3><time>20 hours ago</time></h3>
+        </header>
+        <article>
+          <p>Game architecture is hard. We think our first game, Lost Toys, turned out pretty great but, in the rush to ship, the code got a bit wiffy. That’s something that we want to avoid with our new game, so we’re spending a few weeks prototyping our architecture to address some of the pain-points in Lost Toys.</p>
+<h3 id="the-problem-communication-state">The Problem: Communication &amp; State</h3>
+<p>Some of the areas we wanted to improve were how we managed state in the game (data) and how different components communicated with each other. In Lost Toys, state was owned by their respective components. Communication was handled by calling functions between components. Do you want character A to give something to character B?</p>
+<pre><code>// Note that characterA needs to know about characterB!
+this.give(characterB, something);
+</code></pre><p>In fact, this is even <a href="http://unity3d.com/learn/tutorials/modules/beginner/live-training-archive/communicating-between-components-gameobjects">the recommended Unity-way of communicating between MonoBehaviours</a>.</p>
+<p>In an ideal world and if you&#39;re really really careful about it, you can end up with this:</p>
+<figure>
+  <img src="/assets/images/hierarchy-diagram.jpg" alt="Hierarchy Diagram">
+</figure>
+
+<p>But more likely, you end up with this: (we did...)</p>
+<figure>
+  <img src="/assets/images/mess-diagram.jpg" alt="Mess Diagram">
+</figure>
+
+<p>There are a number of issues with this, but the big one is it’s very difficult to debug. More so when you move beyond just a few simple components.</p>
+<p>What we want instead is something that would give us predictable communication between components and specialized locations for our game&#39;s state.</p>
+<h3 id="the-solution-flux-but-for-games-">The Solution: Flux (but for games)</h3>
+<figure>
+  <img src="/assets/images/flux-diagram.jpg" alt="Flux Diagram">
+  <figcaption>Image credit: <a href="https://github.com/facebook/flux/">Facebook</a></figcaption>
+</figure>
+
+<p>This is Flux. Its an web app architecture from Facebook that’s been buzzing lately in web communities. We’re currently build a web app using Flux and after a few thousand lines of code and multiple developers, its awesome.</p>
+<p>Flux&#39;s main proposition is its unidirectional data flow. Using the diagram above lets go over the main pieces, starting with “Store”:</p>
+<ul>
+<li>Stores hold your games state. Anything that a component would need to know about outside of themselves. When the store’s state changes it notifies any listening components.</li>
+<li>Components (or “React Views” in the diagram above) are only responsible for their local behavior and creating actions. Components have two kinds of state: local state and global state. Global state always comes from a store and represents anything another component might need to know about. Local state is anything I never need to share outside of this component. When stores change, we throw away our old state and get our new state from the stores. If components need to change that state, they don&#39;t do it directly, instead, they create an action and send it on to the dispatcher.</li>
+<li>The dispatcher handles all actions and is a special kind of event emitter that tells all stores about an action. (It also has support for ordering which stores receive actions first but that’s for a different post.)</li>
+<li>Stores can then decide if they care about a particular action and update their state. When stores change their internal state they trigger an event for relevant components. What&#39;s nice about this is that an action can update state in multiple different stores.</li>
+<li>And we&#39;re back to the components.</li>
+</ul>
+<h3 id="an-example">An Example</h3>
+<p>Lets go through an example. Let&#39;s say you have a knight with 100 HP. He can attack or be attacked.</p>
+<ul>
+<li>We start with an enemy component. EnemyComponent creates an action called &quot;HitKnight&quot; with a value of 15 HP.</li>
+<li>The dispatcher sends the HitKnight action to all of our stores.</li>
+<li>The HealthStore holds our knight&#39;s current HP. When this store receives a HitKnight action it decrements its HP counter by the value specified on the action.</li>
+<li>The KnightComponent listening to the HealthStore updates its local state to the value contained in the HealthStore.</li>
+<li>Now, our knight component knows its HP.</li>
+</ul>
+<p>It’s a contrived example but now all communication is unidirectional and state is grouped into stores, outside of our components. The huge huge benefit of this is that everything else that wants to know about the knight’s health can listen on the HealthStore as well. So the UI can change from green to yellow to red as the HealthStore decreases and EnemyComponent can go into “VictoryDance” when the HealthStore reaches zero. Step back and think about that for a while. It means that everything in your game will always have an accurate state. No more weird zombie bugs where the knight thinks it’s dead but the enemy doesn’t agree. It just works.</p>
+<p>Even better, we can drop in a single line of logging into our dispatcher and get:</p>
+<pre><code>ACTION:HIT_KNIGHT:15
+...
+...
+...
+</code></pre><p>We can also test components by mocking data into the stores. Furthermore we can serialize and deserialize snapshots of our stores and restore our game state back to another point in time.</p>
+<h3 id="wrap-up">Wrap-up</h3>
+<p>That&#39;s Flux for games and so far gives us everything we wanted. Separating our game state from our components and more consistent communication. The unidirectional data flow also has also greatly simplified debugging. We&#39;ll be playing with this over the next couple of weeks and hope to have some code to share soon.</p>
+<p>References:</p>
+<ul>
+<li><a href="https://github.com/facebook/flux/">https://github.com/facebook/flux/</a></li>
+<li><a href="http://facebook.github.io/flux/">http://facebook.github.io/flux/</a></li>
+<li><a href="http://facebook.github.io/react/">http://facebook.github.io/react/</a></li>
+</ul>
+
+        </article>
+      </section>
+
+    </main>
+
+    <footer>
+      &copy; 2014 Barking Mouse Studio. All Rights Reserved.
+       | <a href="//www.facebook.com/BarkingMouseStudio">Facebook</a>
+       | <a href="//twitter.com/BarkingMice">Twitter</a>
+       | <a href="//support.barkingmousestudio.com/">Support</a>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/javascript/waypoints.min.js"></script>
+    <script src="/assets/javascript/unveil.js"></script>
+    <script src="/assets/javascript/main.js"></script>
+
+  </body>
+</html>
