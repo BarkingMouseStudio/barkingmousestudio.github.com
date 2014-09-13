@@ -45,13 +45,6 @@ h4 {
   font-weight: 300;
 }
 
-article p,
-article ul li {
-  font-family: 'Aleo', Times, serif;
-  font-weight: 400;
-  margin: 15px 0;
-}
-
 a {
   text-decoration: none;
   color: rgb(11, 158, 166);
@@ -303,6 +296,13 @@ footer a {
   width: 60%;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.content article p,
+.content article ul li {
+  font-family: 'Aleo', Times, serif;
+  font-weight: 400;
+  margin: 15px 0;
 }
 
 .content figure figcaption {
